@@ -1,509 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products | AS Engineering Solutions</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f5f5f5;
-        }
-
-        /* HEADER */
-
-        header {
-            background: #0d1b2a;
-            padding: 15px 40px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .logo img {
-            width: 50px;
-            height: 50px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #00b4d8;
-        }
-
-        /* CONTAINER */
-
-        .container {
-            padding: 40px;
-        }
-
-        .container h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #0d1b2a;
-            font-size: 36px;
-        }
-
-        /* FILTER */
-
-        .product-filter {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .product-filter select {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            min-width: 200px;
-        }
-
-        /* PRODUCT GRID */
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .product-card h3 {
-            padding: 15px;
-            text-align: center;
-            font-size: 18px;
-            color: #222;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #0d1b2a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-
-        /* MOBILE */
-
-        @media(max-width:768px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-    </style>
+    <meta name="description" content="Explore our wide range of CNC and Industrial Spares.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <!-- HEADER -->
-
     <header>
         <nav>
-
             <div class="logo">
                 <img src="images/logo.png" alt="Logo">
                 <span>AS Engineering Solutions</span>
             </div>
-
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="product.html">Products</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Contact.html">Contact Us</a></li>
             </ul>
-
         </nav>
     </header>
 
     <!-- PRODUCTS -->
 
-    <div class="container">
+    <main class="container">
 
         <h2>Our Products</h2>
 
         <!-- FILTER -->
-
         <div class="product-filter">
-
             <div>
-                <label>Main Category:</label><br><br>
-
-                <select id="mainCategory" onchange="updateSubCategory()">
-
+                <label for="mainCategory">Category:</label><br><br>
+                <select id="mainCategory" onchange="filterProducts()">
                     <option value="all">All</option>
                     <option value="CNC">CNC Spares</option>
                     <option value="Conventional">Conventional Spares</option>
                     <option value="Industrial">Industrial Spares</option>
-
                 </select>
             </div>
-
-            <div>
-                <label>Sub Category:</label><br><br>
-
-                <select id="subCategory" onchange="filterProducts()">
-                    <option value="all">All</option>
-                </select>
-            </div>
-
         </div>
 
         <!-- PRODUCT GRID -->
-
         <div class="product-grid">
-
-    <!-- PRODUCT 1 -->
-    <div class="product-card" data-main="CNC" data-sub="Controller">
-        <img src="images/product/product1.jpg" alt="Product 1">
-        <h3>Product 1</h3>
-    </div>
-
-    <!-- PRODUCT 2 -->
-    <div class="product-card" data-main="CNC" data-sub="Relay">
-        <img src="images/product/product2.jpg" alt="Product 2">
-        <h3>Product 2</h3>
-    </div>
-
-    <!-- PRODUCT 3 -->
-    <div class="product-card" data-main="Conventional" data-sub="Fan">
-        <img src="images/product/product3.jpg" alt="Product 3">
-        <h3>Product 3</h3>
-    </div>
-
-    <!-- PRODUCT 4 -->
-    <div class="product-card" data-main="Conventional" data-sub="Lamp">
-        <img src="images/product/product4.jpg" alt="Product 4">
-        <h3>Product 4</h3>
-    </div>
-
-    <!-- PRODUCT 5 -->
-    <div class="product-card" data-main="Industrial" data-sub="Dust">
-        <img src="images/product/product5.jpg" alt="Product 5">
-        <h3>Product 5</h3>
-    </div>
-
-    <!-- PRODUCT 6 -->
-    <div class="product-card" data-main="Industrial" data-sub="Fan">
-        <img src="images/product/product6.jpg" alt="Product 6">
-        <h3>Product 6</h3>
-    </div>
-
-    <!-- PRODUCT 7 -->
-    <div class="product-card" data-main="CNC" data-sub="Motor">
-        <img src="images/product/product7.jpg" alt="Product 7">
-        <h3>Product 7</h3>
-    </div>
-
-    <!-- PRODUCT 8 -->
-    <div class="product-card" data-main="Industrial" data-sub="Pump">
-        <img src="images/product/product8.jpg" alt="Product 8">
-        <h3>Product 8</h3>
-    </div>
-
-    <!-- PRODUCT 9 -->
-    <div class="product-card" data-main="Conventional" data-sub="Switch">
-        <img src="images/product/product9.jpg" alt="Product 9">
-        <h3>Product 9</h3>
-    </div>
-
-    <!-- PRODUCT 10 -->
-    <div class="product-card" data-main="CNC" data-sub="Drive">
-        <img src="images/product/product10.jpg" alt="Product 10">
-        <h3>Product 10</h3>
-    </div>
-
-    <!-- PRODUCT 11 -->
-    <div class="product-card" data-main="CNC" data-sub="Controller">
-        <img src="images/product/product11.jpg" alt="Product 11">
-        <h3>Product 11</h3>
-    </div>
-
-    <!-- PRODUCT 12 -->
-    <div class="product-card" data-main="CNC" data-sub="Relay">
-        <img src="images/product/product12.jpg" alt="Product 12">
-        <h3>Product 12</h3>
-    </div>
-
-    <!-- PRODUCT 13 -->
-    <div class="product-card" data-main="Conventional" data-sub="Fan">
-        <img src="images/product/product13.jpg" alt="Product 13">
-        <h3>Product 13</h3>
-    </div>
-
-    <!-- PRODUCT 14 -->
-    <div class="product-card" data-main="Conventional" data-sub="Lamp">
-        <img src="images/product/product14.jpg" alt="Product 14">
-        <h3>Product 14</h3>
-    </div>
-
-    <!-- PRODUCT 15 -->
-    <div class="product-card" data-main="Industrial" data-sub="Dust">
-        <img src="images/product/product15.jpg" alt="Product 15">
-        <h3>Product 15</h3>
-    </div>
-
-    <!-- PRODUCT 16 -->
-    <div class="product-card" data-main="Industrial" data-sub="Fan">
-        <img src="images/product/product16.jpg" alt="Product 16">
-        <h3>Product 16</h3>
-    </div>
-
-    <!-- PRODUCT 17 -->
-    <div class="product-card" data-main="CNC" data-sub="Motor">
-        <img src="images/product/product17.jpg" alt="Product 17">
-        <h3>Product 17</h3>
-    </div>
-
-    <!-- PRODUCT 18 -->
-    <div class="product-card" data-main="Industrial" data-sub="Pump">
-        <img src="images/product/product18.jpg" alt="Product 18">
-        <h3>Product 18</h3>
-    </div>
-
-    <!-- PRODUCT 19 -->
-    <div class="product-card" data-main="Conventional" data-sub="Switch">
-        <img src="images/product/product19.jpg" alt="Product 19">
-        <h3>Product 19</h3>
-    </div>
-
-    <!-- PRODUCT 20 -->
-    <div class="product-card" data-main="CNC" data-sub="Drive">
-        <img src="images/product/product20.jpg" alt="Product 20">
-        <h3>Product 20</h3>
-    </div>
-
-    <!-- PRODUCT 21 -->
-    <div class="product-card" data-main="CNC" data-sub="Controller">
-        <img src="images/product/product21.jpg" alt="Product 21">
-        <h3>Product 21</h3>
-    </div>
-
-    <!-- PRODUCT 22 -->
-    <div class="product-card" data-main="CNC" data-sub="Relay">
-        <img src="images/product/product22.jpg" alt="Product 22">
-        <h3>Product 22</h3>
-    </div>
-
-    <!-- PRODUCT 23 -->
-    <div class="product-card" data-main="Conventional" data-sub="Fan">
-        <img src="images/product/product23.jpg" alt="Product 23">
-        <h3>Product 23</h3>
-    </div>
-
-    <!-- PRODUCT 24 -->
-    <div class="product-card" data-main="Conventional" data-sub="Lamp">
-        <img src="images/product/product24.jpg" alt="Product 24">
-        <h3>Product 24</h3>
-    </div>
-
-    <!-- PRODUCT 25 -->
-    <div class="product-card" data-main="Industrial" data-sub="Dust">
-        <img src="images/product/product25.jpg" alt="Product 25">
-        <h3>Product 25</h3>
-    </div>
-
-    <!-- PRODUCT 26 -->
-    <div class="product-card" data-main="Industrial" data-sub="Fan">
-        <img src="images/product/product26.jpg" alt="Product 26">
-        <h3>Product 26</h3>
-    </div>
-
-    <!-- PRODUCT 27 -->
-    <div class="product-card" data-main="CNC" data-sub="Motor">
-        <img src="images/product/product27.jpg" alt="Product 27">
-        <h3>Product 27</h3>
-    </div>
-
-    <!-- PRODUCT 28 -->
-    <div class="product-card" data-main="Industrial" data-sub="Pump">
-        <img src="images/product/product28.jpg" alt="Product 28">
-        <h3>Product 28</h3>
-    </div>
-
-    <!-- PRODUCT 29 -->
-    <div class="product-card" data-main="Conventional" data-sub="Switch">
-        <img src="images/product/product29.jpg" alt="Product 29">
-        <h3>Product 29</h3>
-    </div>
-
-    <!-- PRODUCT 30 -->
-    <div class="product-card" data-main="CNC" data-sub="Drive">
-        <img src="images/product/product30.jpg" alt="Product 30">
-        <h3>Product 30</h3>
-    </div>
-
-    <!-- PRODUCT 31 -->
-    <div class="product-card" data-main="CNC" data-sub="Controller">
-        <img src="images/product/product31.jpg" alt="Product 31">
-        <h3>Product 31</h3>
-    </div>
-
-    <!-- PRODUCT 32 -->
-    <div class="product-card" data-main="CNC" data-sub="Relay">
-        <img src="images/product/product32.jpg" alt="Product 32">
-        <h3>Product 32</h3>
-    </div>
-
-    <!-- PRODUCT 33 -->
-    <div class="product-card" data-main="Conventional" data-sub="Fan">
-        <img src="images/product/product33.jpg" alt="Product 33">
-        <h3>Product 33</h3>
-    </div>
-
-    <!-- PRODUCT 34 -->
-    <div class="product-card" data-main="Conventional" data-sub="Lamp">
-        <img src="images/product/product34.jpg" alt="Product 34">
-        <h3>Product 34</h3>
-    </div>
-
-    <!-- PRODUCT 35 -->
-    <div class="product-card" data-main="Industrial" data-sub="Dust">
-        <img src="images/product/product35.jpg" alt="Product 35">
-        <h3>Product 35</h3>
-    </div>
-
-</div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product1.jpg" alt="Hand Held Remote Controller">
+                <h3>Hand Held Remote Controller</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product2.jpg" alt="Spindle Cooling Fan Motor">
+                <h3>Spindle Cooling Fan Motor</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product3.jpg" alt="Flexible LED Machine Lamp">
+                <h3>Flexible LED Machine Lamp</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product4.jpg" alt="LED Machine Lamp">
+                <h3>LED Machine Lamp</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product5.jpg" alt="Relay">
+                <h3>Relay</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product6.jpg" alt="Omron Relay">
+                <h3>Omron Relay</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product7.jpg" alt="Fanuc (Panasonic) Battery BR-AGCF2W">
+                <h3>Fanuc (Panasonic) Battery BR-AGCF2W</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product8.jpg" alt="Dust Collector">
+                <h3>Dust Collector</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product9.jpg" alt="TE Limit Switch">
+                <h3>TE Limit Switch</h3>
+            </div>
+            <div class="product-card reveal" data-main="Conventional">
+                <img loading="lazy" src="images/product/Product10.jpg" alt="Hydraulic Gear Pump">
+                <h3>Hydraulic Gear Pump</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product11.jpg" alt="Power Cable, Encoder Cable">
+                <h3>Power Cable, Encoder Cable</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product12.jpg" alt="Fanuc (Panasonic) Battery BR-2/3AGCT4A">
+                <h3>Fanuc (Panasonic) Battery BR-2/3AGCT4A</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product13.jpg" alt="Fanuc Fuse (1A, 2A, 3A)">
+                <h3>Fanuc Fuse (1A, 2A, 3A)</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product14.jpg" alt="Pizzato Limit Switch">
+                <h3>Pizzato Limit Switch</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product15.jpg" alt="LM Block">
+                <h3>LM Block</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product16.jpg" alt="LM Guide">
+                <h3>LM Guide</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product17.jpg" alt="MPG Controller">
+                <h3>MPG Controller</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product18.jpg" alt="NMB-MAT Fan">
+                <h3>NMB-MAT Fan</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product19.jpg" alt="Pulsecoder">
+                <h3>Pulsecoder</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/Product20.jpg" alt="Ungalvanized Rope">
+                <h3>Ungalvanized Rope</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product21.jpg" alt="Rotary Switch">
+                <h3>Rotary Switch</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product22.jpg" alt="San Ace 40 Fan">
+                <h3>San Ace 40 Fan</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product23.jpg" alt="Servo Amplifier">
+                <h3>Servo Amplifier</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/Product24.jpg" alt="Pendant Cable">
+                <h3>Pendant Cable</h3>
+            </div>
+            <div class="product-card reveal" data-main="CNC">
+                <img loading="lazy" src="images/product/product25.jpg" alt="Ball Screw Rod">
+                <h3>Ball Screw Rod</h3>
+            </div>
+            <div class="product-card reveal" data-main="Conventional">
+                <img loading="lazy" src="images/product/product26.jpg" alt="Timing Pulley">
+                <h3>Timing Pulley</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product27.jpg" alt="Automation Controller">
+                <h3>Automation Controller</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product28.jpg" alt="Rexnord Axial Fan">
+                <h3>Rexnord Axial Fan</h3>
+            </div>
+            <div class="product-card reveal" data-main="Conventional">
+                <img loading="lazy" src="images/product/product29.jpg" alt="Customized Gear">
+                <h3>Customized Gear</h3>
+            </div>
+            <div class="product-card reveal" data-main="Conventional">
+                <img loading="lazy" src="images/product/product30.jpg" alt="Hydraulic Motor">
+                <h3>Hydraulic Motor</h3>
+            </div>
+            <div class="product-card reveal" data-main="Conventional">
+                <img loading="lazy" src="images/product/product31.jpg" alt="Seal Kit">
+                <h3>Seal Kit</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product32.jpg" alt="Linear Scale">
+                <h3>Linear Scale</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product33.jpg" alt="PID Controller">
+                <h3>PID Controller</h3>
+            </div>
+            <div class="product-card reveal" data-main="Industrial">
+                <img loading="lazy" src="images/product/product34.jpg" alt="SMPS">
+                <h3>SMPS</h3>
+            </div>
+            <div class="product-card reveal" data-main="Conventional">
+                <img loading="lazy" src="images/product/product35.jpg" alt="Timing Belt">
+                <h3>Timing Belt</h3>
+            </div>
+        </div>
 
             
         </div>
 
-    </div>
+    </main>
 
     <!-- FOOTER -->
 
     <footer>
-        © 2026 AS Engineering Solutions. All Rights Reserved.
+        <div class="container">
+            <p>© 2026 AS Engineering Solutions. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- SCRIPT -->
 
-    <script>
 
-        const subCategories = {
 
-            all: ["all"],
-
-            CNC: ["all", "Controller", "Relay", "Motor", "Drive"],
-
-            Conventional: ["all", "Fan", "Lamp", "Relay", "Switch"],
-
-            Industrial: ["all", "Lamp", "Dust", "Fan", "Pump", "Cable"]
-
-        };
-
-        function updateSubCategory() {
-
-            const mainCategory = document.getElementById("mainCategory").value;
-
-            const subCategory = document.getElementById("subCategory");
-
-            subCategory.innerHTML = "";
-
-            subCategories[mainCategory].forEach(sub => {
-
-                let option = document.createElement("option");
-
-                option.value = sub;
-
-                option.textContent = sub;
-
-                subCategory.appendChild(option);
-
-            });
-
-            filterProducts();
-        }
-
-        function filterProducts() {
-
-            const mainCategory = document.getElementById("mainCategory").value;
-
-            const subCategory = document.getElementById("subCategory").value;
-
-            const products = document.querySelectorAll(".product-card");
-
-            products.forEach(product => {
-
-                const productMain = product.getAttribute("data-main");
-
-                const productSub = product.getAttribute("data-sub");
-
-                const mainMatch = mainCategory === "all" || productMain === mainCategory;
-
-                const subMatch = subCategory === "all" || productSub === subCategory;
-
-                if (mainMatch && subMatch) {
-                    product.style.display = "block";
-                } else {
-                    product.style.display = "none";
-                }
-
-            });
-
-        }
-
-        updateSubCategory();
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 

@@ -2,49 +2,294 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AS Engineering Solutions | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS Engineering Solutions | Single Page Web</title>
+    <meta name="description" content="Your Trusted Partner for CNC & Industrial Spares.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<
-
-
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <img src="images/logo.png" alt="AS Engineering Solutions Logo">
-            <span>AS Engineering Solutions</span>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="AS Engineering Solutions Logo">
+                <span>AS Engineering Solutions</span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home">
+            <div class="home-welcome animated-bg">
+                <div class="container reveal glass-hero">
+                    <h1>
+                        <span class="typewriter" data-text="Welcome to AS Engineering Solutions"></span><span class="cursor">&nbsp;</span>
+                    </h1>
+                    <p class="subtitle-reveal">Your Trusted Partner for CNC & Industrial Spares</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US SECTION -->
+        <section id="about">
+            <div class="container hero reveal slide-up glass-card">
+                <h2>About Us</h2>
+                <p>
+                    AS Engineering Solutions is engaged in trading of Conventional and CNC
+                    machine spares and providing professional service support. With industry
+                    experience and a strong supplier network, we ensure quality, reliability,
+                    and timely delivery for our customers.
+                </p>
+            </div>
+
+            <div class="why-choose-us reveal slide-up glass-card">
+                <div class="container">
+                    <h2>Why Choose Us</h2>
+                    <ul class="green-points">
+                        <li>Quality-tested spares</li>
+                        <li>Wide supplier network</li>
+                        <li>Competitive pricing</li>
+                        <li>Quick quotation & delivery</li>
+                        <li>Technical support assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section id="products" class="container">
+            <h2>Our Products</h2>
+
+            <!-- FILTER -->
+            <div class="product-filter">
+                <div>
+                    <label for="mainCategory">Category:</label><br><br>
+                    <select id="mainCategory" onchange="filterProducts()">
+                        <option value="all">All</option>
+                        <option value="CNC">CNC Spares</option>
+                        <option value="Conventional">Conventional Spares</option>
+                        <option value="Industrial">Industrial Spares</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div class="product-grid">
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product1.jpg" alt="Hand Held Remote Controller">
+                    <h3>Hand Held Remote Controller</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product2.jpg" alt="Spindle Cooling Fan Motor">
+                    <h3>Spindle Cooling Fan Motor</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product3.jpg" alt="Flexible LED Machine Lamp">
+                    <h3>Flexible LED Machine Lamp</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product4.jpg" alt="LED Machine Lamp">
+                    <h3>LED Machine Lamp</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product5.jpg" alt="Relay">
+                    <h3>Relay</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product6.jpg" alt="Omron Relay">
+                    <h3>Omron Relay</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product7.jpg" alt="Fanuc (Panasonic) Battery BR-AGCF2W">
+                    <h3>Fanuc (Panasonic) Battery BR-AGCF2W</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product8.jpg" alt="Dust Collector">
+                    <h3>Dust Collector</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product9.jpg" alt="TE Limit Switch">
+                    <h3>TE Limit Switch</h3>
+                </div>
+                <div class="product-card reveal" data-main="Conventional">
+                    <img loading="lazy" src="images/product/Product10.jpg" alt="Hydraulic Gear Pump">
+                    <h3>Hydraulic Gear Pump</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product11.jpg" alt="Power Cable, Encoder Cable">
+                    <h3>Power Cable, Encoder Cable</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product12.jpg" alt="Fanuc (Panasonic) Battery BR-2/3AGCT4A">
+                    <h3>Fanuc (Panasonic) Battery BR-2/3AGCT4A</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product13.jpg" alt="Fanuc Fuse (1A, 2A, 3A)">
+                    <h3>Fanuc Fuse (1A, 2A, 3A)</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product14.jpg" alt="Pizzato Limit Switch">
+                    <h3>Pizzato Limit Switch</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product15.jpg" alt="LM Block">
+                    <h3>LM Block</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product16.jpg" alt="LM Guide">
+                    <h3>LM Guide</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product17.jpg" alt="MPG Controller">
+                    <h3>MPG Controller</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product18.jpg" alt="NMB-MAT Fan">
+                    <h3>NMB-MAT Fan</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product19.jpg" alt="Pulsecoder">
+                    <h3>Pulsecoder</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/Product20.jpg" alt="Ungalvanized Rope">
+                    <h3>Ungalvanized Rope</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product21.jpg" alt="Rotary Switch">
+                    <h3>Rotary Switch</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product22.jpg" alt="San Ace 40 Fan">
+                    <h3>San Ace 40 Fan</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product23.jpg" alt="Servo Amplifier">
+                    <h3>Servo Amplifier</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/Product24.jpg" alt="Pendant Cable">
+                    <h3>Pendant Cable</h3>
+                </div>
+                <div class="product-card reveal" data-main="CNC">
+                    <img loading="lazy" src="images/product/product25.jpg" alt="Ball Screw Rod">
+                    <h3>Ball Screw Rod</h3>
+                </div>
+                <div class="product-card reveal" data-main="Conventional">
+                    <img loading="lazy" src="images/product/product26.jpg" alt="Timing Pulley">
+                    <h3>Timing Pulley</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product27.jpg" alt="Automation Controller">
+                    <h3>Automation Controller</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product28.jpg" alt="Rexnord Axial Fan">
+                    <h3>Rexnord Axial Fan</h3>
+                </div>
+                <div class="product-card reveal" data-main="Conventional">
+                    <img loading="lazy" src="images/product/product29.jpg" alt="Customized Gear">
+                    <h3>Customized Gear</h3>
+                </div>
+                <div class="product-card reveal" data-main="Conventional">
+                    <img loading="lazy" src="images/product/product30.jpg" alt="Hydraulic Motor">
+                    <h3>Hydraulic Motor</h3>
+                </div>
+                <div class="product-card reveal" data-main="Conventional">
+                    <img loading="lazy" src="images/product/product31.jpg" alt="Seal Kit">
+                    <h3>Seal Kit</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product32.jpg" alt="Linear Scale">
+                    <h3>Linear Scale</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product33.jpg" alt="PID Controller">
+                    <h3>PID Controller</h3>
+                </div>
+                <div class="product-card reveal" data-main="Industrial">
+                    <img loading="lazy" src="images/product/product34.jpg" alt="SMPS">
+                    <h3>SMPS</h3>
+                </div>
+                <div class="product-card reveal" data-main="Conventional">
+                    <img loading="lazy" src="images/product/product35.jpg" alt="Timing Belt">
+                    <h3>Timing Belt</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="container">
+            <h2>Our Services</h2>
+            <div class="card-grid">
+                <div class="card glass-card reveal stagger-1">
+                    <h3>CNC Machine Service & Maintenance</h3>
+                </div>
+                <div class="card glass-card reveal stagger-2">
+                    <h3>Breakdown Support</h3>
+                </div>
+                <div class="card glass-card reveal stagger-3">
+                    <h3>Installation & Commissioning</h3>
+                </div>
+                <div class="card glass-card reveal stagger-4">
+                    <h3>Technical Consultation</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-wrapper glass-card">
+                <div class="contact-info">
+                    <p>
+                        <strong>AS Engineering Solutions</strong>
+                        Trading & Service – Conventional and CNC Spares
+                    </p>
+                    <p>
+                        <strong>Phone</strong>
+                        <a href="tel:+919600244523">+91 9600244523</a>
+                        <a href="tel:+919940819159">+91 9940819159</a>
+                    </p>
+                    <p>
+                        <strong>Email</strong>
+                        <a href="mailto:asengineeringsolutions2324@gmail.com">asengineeringsolutions2324@gmail.com</a>
+                    </p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/919600244523?text=Hello%20AS%20Engineering%20Solutions,%20I%20need%20a%20quotation%20for%20spares."
+       class="whatsapp-float"
+       target="_blank"
+       title="Chat with us on WhatsApp">
+       <img src="images/whatsapp.png" alt="WhatsApp Chat">
+    </a>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AS Engineering Solutions. All Rights Reserved.</p>
         </div>
+    </footer>
 
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
-</header>
-<section class="home-welcome">
-    <h1>Welcome to AS Engineering Solutions</h1>
-    <p>Your Trusted Partner for CNC & Industrial Spares</p>
-</section>
-
-
-<!-- HOME -->
-<section id="home" class="container hero reveal">
-    <h2>Welcome to AS Engineering Solutions!!!</h2>
-    <p>
-        AS Engineering Solutions is a trusted trading and service provider
-        for Conventional and CNC machine spares. We deliver quality products,
-        reliable service, and technical support to meet industry needs.
-    </p>
-</section>
-<!-- Floating Logo -->
-<div class="floating-logo">
-    <img src="images/logo.png" alt="Company Logo">
-</div>
-
-<!-- ABOUT -->
-<section id="about" class="container hero reveal">
+    <script src="script.js"></script>
+</body>
+</html>

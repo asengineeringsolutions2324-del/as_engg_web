@@ -14,3 +14,7 @@ package-lock.json
 
 # Logs folder
 logs/
+
+# Backups
+images/product_backup/
+
